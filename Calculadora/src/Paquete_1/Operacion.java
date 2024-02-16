@@ -101,11 +101,7 @@ public class Operacion {
 	    	return resultadoInicial;
 	    }
 	    
-	    public double arcoTangente(double radian) {
-	    	resultadoInicial = Math.atan(radian);
-	    	return resultadoInicial;
-	    }
-	    
+ 
 }
 
 

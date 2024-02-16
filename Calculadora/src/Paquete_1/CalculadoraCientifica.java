@@ -23,8 +23,7 @@ public class CalculadoraCientifica extends Calculadora{
 	    System.out.println("13. Cotangente");
 	    System.out.println("14. Secante");
 	    System.out.println("15. Cosecante");
-	    System.out.println("16. ArcoTangente");
-	    System.out.println("17. Salir");
+	    System.out.println("16. Salir");
 	    System.out.println();
 	    
 	    while (opcion < 1 || opcion > 16) {
@@ -163,19 +162,36 @@ public class CalculadoraCientifica extends Calculadora{
 	    	System.out.println("LA COSECANTE ES: "  + operacion.cosecante(angulo));
 	    	break;
 	    	
+
 	    case 16:
-	    	System.out.println("-----> USTED SELECCIONÓ ARCOTANGENTE --");
-	    	System.out.print("INGRESE LOS RADIANES: "); 
-	    	radian = leer.nextDouble();
-	    	System.out.println("EL ARCO TANGENTE ES: "  + operacion.arcoTangente(radian));
-	    	break;
-	    	
-	    case 17:
             System.out.println("-----> USTED HA DECIDIDO SALIR DE LA CALCULADORA CIENTÍFICA --");
             System.out.println();
             System.out.println();
-            System.out.println();
-            seleccionarCalculadora();
+
+            do {	
+        	    System.out.println("¿ DESEA UTILIZAR NUEVAMENTE ALGUNA CALCULADORA ?");
+        	    System.out.println("1. SI");
+        	    System.out.println("2. NO");
+        	    System.out.print("SELECCIONE UNA OPCIÓN:");
+        	    opcion = leer.nextInt();
+        	    System.out.println();
+        	    
+        	    if(opcion < 1 || opcion > 2) {
+        	    	System.out.print("OPCION INVALIDA, VUELVA A INTENTARLO: ");
+        	        seguirOperando = leer.nextInt(); 
+        	    }
+        	    }while(opcion < 1 || opcion > 2);
+        	    
+        	    	switch(opcion) {
+        	    	case 1: 
+        	    		CalculadoraCientifica calculadoraCientifica = new CalculadoraCientifica();
+        	    		calculadoraCientifica.seleccionarCalculadora();
+        	    		return operacion.getResultadoInicial();
+        	    		
+        	    	case 2:
+        	    		System.out.println("----->---> OK JOVEN, RECUERDE QUE SU RESULTADO FINAL ES: " + operacion.getResultadoInicial());
+        	    		return operacion.getResultadoInicial();
+        	    	}
             break;
 	    }
 		
@@ -189,7 +205,7 @@ public class CalculadoraCientifica extends Calculadora{
 	    	
 	    	System.out.println();
 	    	System.out.println();
-	        System.out.println("¿ DESEA SEGUIR OPERANDO ?");
+	        System.out.println("¿ DESEA SEGUIR OPERANDO CON EL ÚLTIMO RESULTADO?");
 	        System.out.println("1. SI");
 	        System.out.println("2. NO");
 	        System.out.println();
@@ -233,8 +249,8 @@ public class CalculadoraCientifica extends Calculadora{
 	            if (opcion < 1 || opcion > 16) {
                     System.out.println("OPCION INVÁLIDA, PORFA VUELVA A INTENTARLO");
                     System.out.println();
-                }
-            }while (opcion < 1 || opcion > 16);
+                	}
+	            }while (opcion < 1 || opcion > 16);
 	            
 	            
 	            switch (opcion) {
@@ -329,25 +345,78 @@ public class CalculadoraCientifica extends Calculadora{
                 	break;
                 	
                 case 16:
-                	System.out.println("-----> USTED HA DECIDIDO SALIR DE LA CALCULADORA BÁSICA --");
+                	System.out.println("-----> 	JOVEN, USTED HA DECIDIDO SALIR DE LA CALCULADORA CIENTÍFICA --");
                     System.out.println("SU ÚLTIMO RESULTADO ES: " + operacion.getResultadoInicial());
-                    break; 	
+                    System.out.println();
+                    do {	
+                	    System.out.println("¿ DESEA UTILIZAR NUEVAMENTE ALGUNA CALCULADORA ?");
+                	    System.out.println("1. SI");
+                	    System.out.println("2. NO");
+                	    System.out.print("SELECCIONE UNA OPCIÓN:");
+                	    opcion = leer.nextInt();
+                	    System.out.println();
+                	    
+                	    if(opcion < 1 || opcion > 2) {
+                	    	System.out.print("OPCION INVALIDA, VUELVA A INTENTARLO: ");
+                	        seguirOperando = leer.nextInt(); 
+                	    }
+                	    }while(opcion < 1 || opcion > 2);
+                	    
+                	    	switch(opcion) {
+                	    	case 1: 
+                	    		CalculadoraCientifica calculadoraCientifica = new CalculadoraCientifica();
+                	    		calculadoraCientifica.seleccionarCalculadora();
+                	    		return operacion.getResultadoInicial();
+                	    		
+                	    	case 2:
+                	    		System.out.println("----->---> OK JOVEN, RECUERDE QUE SU RESULTADO FINAL ES: " + operacion.getResultadoInicial());
+                	    		return operacion.getResultadoInicial();
+                	    	}
+                    return operacion.getResultadoInicial(); 	
             }
         
-        }
-
+	        }
+	    
+	        
     } while (seguirOperando == 1);
-    
     System.out.println();
-    System.out.println("-----> HAS DECIDIDO NO SEGUIR OPERANDO, GRACIAS POR USAR LA CALCULADORA. TU ÚLTIMO RESULTADO FUE: " + operacion.getResultadoInicial());
     
+    
+    
+		System.out.println("-----> HAS DECIDIDO NO SEGUIR OPERANDO, GRACIAS POR USAR LA CALCULADORA. TU ÚLTIMO RESULTADO FUE: " + operacion.getResultadoInicial());
+		System.out.println();
 		
-		
-		
+	    do {	
+	    System.out.println("¿ DESEA UTILIZAR NUEVAMENTE ALGUNA CALCULADORA ?");
+	    System.out.println("1. SI");
+	    System.out.println("2. NO");
+	    System.out.print("SELECCIONE UNA OPCIÓN:");
+	    opcion = leer.nextInt();
+	    System.out.println();
+	    
+	    if(opcion < 1 || opcion > 2) {
+	    	System.out.print("OPCION INVALIDA, VUELVA A INTENTARLO: ");
+	        seguirOperando = leer.nextInt(); 
+	    }
+	    }while(opcion < 1 || opcion > 2);
+	    
+	    	switch(opcion) {
+	    	case 1: 
+	    		CalculadoraCientifica calculadoraCientifica = new CalculadoraCientifica();
+	    		calculadoraCientifica.seleccionarCalculadora();
+	    		break;
+	    		
+	    	case 2:
+	    		System.out.println("----->---> OK JOVEN, RECUERDE QUE SU RESULTADO FINAL ES: " + operacion.getResultadoInicial());
+	    		break;
+	    	}
+	    
+
 		double resultado = 0;
 	    return resultado;
 		
-	}
 	
-
 }
+
+	}
+
